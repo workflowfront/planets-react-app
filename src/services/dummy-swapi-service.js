@@ -35,7 +35,7 @@ export default class DummySwapiService {
     }
   ];
 
-  _galacticaships = [
+  _starships = [
     {
       id: 1,
       name: 'USS Enterprise [TEST DATA]',
@@ -65,19 +65,19 @@ export default class DummySwapiService {
     return this._planets[0]
   };
 
-  getAllGalacticaships = async () => {
-    return this._galacticaships;
+  getAllStarships = async () => {
+    return this._starships;
   };
 
-  getGalacticaship = async () => {
-    return this._galacticaships[0];
+  getStarship = async () => {
+    return this._starships[0];
   };
 
   getPersonImage = () => {
     return `https://placeimg.com/400/500/people`
   };
 
-  getGalacticashipImage = () => {
+  getStarshipImage = () => {
     return `https://placeimg.com/600/400/tech`;
   };
 

@@ -1,6 +1,6 @@
 export default class SwapiService {
 
-  _apiBase = 'https://swapi.dev/api';;
+  _apiBase = 'https://swapi.dev/api';
   _imageBase = 'https://starwars-visualguide.com/assets/img';
 
   getResource = async (url) => {
@@ -37,24 +37,24 @@ export default class SwapiService {
     return this._transformPlanet(planet);
   };
 
-  getAllGalacticaships = async () => {
-    const res = await this.getResource(`/galacticaships/`);
+  getAllStarships = async () => {
+    const res = await this.getResource(`/starships/`);
     return res.results
-      .map(this._transformGalacticaship)
+      .map(this._transformStarship)
       .slice(0, 5);
   };
 
-  getGalacticaship = async (id) => {
-    const galacticaship = await this.getResource(`/galacticaships/${id}/`);
-    return this._transformGalacticaship(galacticaship);
+  getStarship = async (id) => {
+    const starship = await this.getResource(`/starships/${id}/`);
+    return this._transformStarship(starship);
   };
 
   getPersonImage = ({id}) => {
     return `${this._imageBase}/characters/${id}.jpg`
   };
 
-  getGalacticashipImage = ({id}) => {
-    return `${this._imageBase}/galacticaships/${id}.jpg`
+  getStarshipImage = ({id}) => {
+    return `${this._imageBase}/starships/${id}.jpg`
   };
 
   getPlanetImage = ({id}) => {
@@ -76,17 +76,17 @@ export default class SwapiService {
     };
   };
 
-  _transformGalacticaship = (galacticaship) => {
+  _transformStarship = (starship) => {
     return {
-      id: this._extractId(galacticaship),
-      name: galacticaship.name,
-      model: galacticaship.model,
-      manufacturer: galacticaship.manufacturer,
-      costInCredits: galacticaship.cost_in_credits,
-      length: galacticaship.length,
-      crew: galacticaship.crew,
-      passengers: galacticaship.passengers,
-      cargoCapacity: galacticaship.cargo_capacity
+      id: this._extractId(starship),
+      name: starship.name,
+      model: starship.model,
+      manufacturer: starship.manufacturer,
+      costInCredits: starship.cost_in_credits,
+      length: starship.length,
+      crew: starship.crew,
+      passengers: starship.passengers,
+      cargoCapacity: starship.cargo_capacity
     }
   };
 

@@ -1,14 +1,1 @@
-planets react app
-
-## Development 
-
-```bash
-# install dependencies
-npm i
-
-# build
-npm run build
-
-# start
-npm run start
-```
+# planets-react-app

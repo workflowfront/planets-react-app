@@ -22,9 +22,9 @@ const mapPlanetMethodsToProps = (swapiService) => {
   };
 };
 
-const mapGalacticashipMethodsToProps = (swapiService) => {
+const mapStarshipMethodsToProps = (swapiService) => {
   return {
-    getData: swapiService.getAllGalacticaships
+    getData: swapiService.getAllStarships
   };
 };
 
@@ -40,8 +40,8 @@ const PlanetList = compose(
                      withChildFunction(renderName)
                    )(ItemList);
 
-const GalacticashipList = compose(
-                       withSwapiService(mapGalacticashipMethodsToProps),
+const StarshipList = compose(
+                       withSwapiService(mapStarshipMethodsToProps),
                        withData,
                        withChildFunction(renderModelAndName)
                      )(ItemList);
@@ -49,5 +49,5 @@ const GalacticashipList = compose(
 export {
   PersonList,
   PlanetList,
-  GalacticashipList
+  StarshipList
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import ItemDetails, { Record } from '../item-details';
 import { withSwapiService } from '../hoc-helpers';
 
-const GalacticashipDetails = (props) => {
+const StarshipDetails = (props) => {
   return (
     <ItemDetails {...props}>
       <Record field="model" label="Model" />
@@ -14,9 +14,9 @@ const GalacticashipDetails = (props) => {
 
 const mapMethodsToProps = (swapiService) => {
   return {
-    getData: swapiService.getGalacticaship,
-    getImageUrl: swapiService.getGalacticashipImage
+    getData: swapiService.getStarship,
+    getImageUrl: swapiService.getStarshipImage
   }
 };
 
-export default withSwapiService(mapMethodsToProps)(GalacticashipDetails);
+export default withSwapiService(mapMethodsToProps)(StarshipDetails);
